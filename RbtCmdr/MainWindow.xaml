@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RbtCmdr"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Reboot Commander" Height="339.356" Width="384.901">
+    <Grid x:Name="Hib" Margin="0,0,-25.05,0" RenderTransformOrigin="1.325,0.494">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <RadioButton x:Name="sdown" Content="Shutdown" HorizontalAlignment="Left" Margin="85,115.395,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,1.728" Height="15" Width="72.5"/>
+        <RadioButton x:Name="Rbt" Content="ReStart Windows" HorizontalAlignment="Left" Margin="85,135.395,0,0" VerticalAlignment="Top" Height="15" Width="108.5"/>
+        <RadioButton x:Name="sleep" Content="Sleep" HorizontalAlignment="Left" Margin="85,74.534,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.268,-4.016" Height="15" Width="48"/>
+        <RadioButton x:Name="Hib1" Content="Hibernate" HorizontalAlignment="Left" Margin="85,95.395,0,0" VerticalAlignment="Top" Height="15" Width="74"/>
+        <RadioButton x:Name="Log_off" Content="Logoff" HorizontalAlignment="Left" Margin="85,53.049,0,0" VerticalAlignment="Top" Height="16.485" Width="113.5"/>
+        <RadioButton x:Name="RBT_FW" Content="Boot to Bios/Firmware" HorizontalAlignment="Left" Margin="85,155.395,0,0" VerticalAlignment="Top" Height="15" Width="137"/>
+        <RadioButton x:Name="Rbt_Adv" Content="Boot to Advances options" HorizontalAlignment="Left" Margin="85,175.395,0,0" VerticalAlignment="Top" Height="15" Width="155.5"/>
+        <Button Content="Reboot" HorizontalAlignment="Left" Margin="85,212.623,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="Button_Click_1"/>
+        <Button Content="Cancel" Margin="197.495,212.623,97.956,0" VerticalAlignment="Top" Click="Button_Click" IsCancel="True" Height="35" Width="90"/>
+        <RadioButton x:Name="LockWS" Content="Lock Computer" HorizontalAlignment="Left" Margin="85,29.999,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
