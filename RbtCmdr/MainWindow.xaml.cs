@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Security.Principal;
 
 namespace RbtCmdr
 {
@@ -36,8 +37,20 @@ namespace RbtCmdr
         {
 
             InitializeComponent();
+            bool Admin = IsAdministrator();
+            if (Admin == true)
+            {
 
-        }
+            }
+            if (Admin ==false)
+            {
+                Rbt_Adv.Visibility = Visibility.Hidden;
+                RBT_FW.Visibility = Visibility.Hidden;
+                //System.Windows.MessageBox.Show("Not ADMIN"); 
+            }
+
+
+            }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -82,7 +95,61 @@ namespace RbtCmdr
                 Process.Start("shutdown", "/r /o /t 0");
             }
         }
+
+        //Check if user is running as admin
+        public static bool IsAdministrator()
+        {
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        private void LockWS_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Lock Workstation";
+        }
+
+        private void Log_off_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Logoff";
+        }
+
+        private void sleep_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Sleep";
+        }
+
+        private void Hib1_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Hibernate";
+        }
+
+        private void sdown_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Shutdown";
+        }
+
+        private void Rbt_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Restart";
+        }
+
+        private void RBT_FW_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Boot Firmware";
+        }
+
+        private void Rbt_Adv_Checked(object sender, RoutedEventArgs e)
+        {
+            RBT_BTN.Content = "Advanced Options";
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
+
 
 
 }
