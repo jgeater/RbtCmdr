@@ -36,18 +36,18 @@ namespace RbtCmdr
         public MainWindow()
         {
 
-            InitializeComponent();
-            bool Admin = IsAdministrator();
-            if (Admin == true)
-            {
+            //InitializeComponent();
+            //bool Admin = IsAdministrator();
+            //if (Admin == true)
+            //{
 
-            }
-            if (Admin ==false)
-            {
-                Rbt_Adv.Visibility = Visibility.Hidden;
-                RBT_FW.Visibility = Visibility.Hidden;
+            //}
+            //if (Admin ==false)
+            //{
+            //    Rbt_Adv.Visibility = Visibility.Hidden;
+            //    RBT_FW.Visibility = Visibility.Hidden;
                 //System.Windows.MessageBox.Show("Not ADMIN"); 
-            }
+            //}
 
 
             }
@@ -88,11 +88,29 @@ namespace RbtCmdr
             }
             if (RBT_FW.IsChecked ==true)
             {
-                Process.Start("shutdown", "/r /fw /t 0");
+                //Process.Start("shutdown", "/r /fw /t 0");
+                Process FW = new Process();
+                FW.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                FW.StartInfo.FileName = "Shutdown.exe";
+                FW.StartInfo.Arguments = "/r /fw /t 0";
+                FW.StartInfo.UseShellExecute = true;
+                FW.StartInfo.RedirectStandardOutput = false;
+                FW.StartInfo.RedirectStandardError = false;
+                FW.StartInfo.Verb = "runas";
+                FW.Start();
             }
             if(Rbt_Adv.IsChecked==true)
             {
-                Process.Start("shutdown", "/r /o /t 0");
+                Process ADV = new Process();
+                ADV.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                ADV.StartInfo.FileName = "Shutdown.exe";
+                ADV.StartInfo.Arguments = "/r /o /t 0";
+                ADV.StartInfo.UseShellExecute = true;
+                ADV.StartInfo.RedirectStandardOutput = false;
+                ADV.StartInfo.RedirectStandardError = false;
+                ADV.StartInfo.Verb = "runas";
+                ADV.Start();
+                //Process.Start("shutdown", "/r /o /t 0");
             }
         }
 
