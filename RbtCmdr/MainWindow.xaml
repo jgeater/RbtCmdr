@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RbtCmdr"
         mc:Ignorable="d"
-        Title="Reboot Commander" Height="373.292" Width="369.688">
+        Title="Reboot Commander" Height="373.292" Width="369.688" Loaded="Window_Loaded">
     <Grid x:Name="Hib" Margin="0,0,-5.188,11.702" RenderTransformOrigin="1.325,0.494">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -21,6 +21,7 @@
         <Button x:Name="RBT_BTN" Content="Reboot" HorizontalAlignment="Left" Margin="47.5,227,0,0" VerticalAlignment="Top" Width="110" Height="35" Click="Button_Click_1" RenderTransformOrigin="-0.21,0.536"/>
         <RadioButton x:Name="LockWS" Content="Lock Computer" HorizontalAlignment="Left" Margin="85,29.999,0,0" VerticalAlignment="Top" Checked="LockWS_Checked"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="217.319,227,0,0" VerticalAlignment="Top" Width="110" Height="35" Click="Button_Click_2"/>
+        <RadioButton x:Name="Rbt_USB" Content="Boot to USB" HorizontalAlignment="Left" Margin="85,195.395,0,0" VerticalAlignment="Top" Height="15" Width="155.5" Checked="Rbt_Adv_Checked" Visibility="Hidden"/>
 
     </Grid>
 </Window>

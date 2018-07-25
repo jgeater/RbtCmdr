@@ -15,6 +15,8 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Security.Principal;
+using System.IO;
+using System.ComponentModel;
 
 namespace RbtCmdr
 {
@@ -46,11 +48,30 @@ namespace RbtCmdr
             //{
             //    Rbt_Adv.Visibility = Visibility.Hidden;
             //    RBT_FW.Visibility = Visibility.Hidden;
-                //System.Windows.MessageBox.Show("Not ADMIN"); 
+            //System.Windows.MessageBox.Show("Not ADMIN"); 
             //}
-
+            
 
             }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var drives = DriveInfo.GetDrives();
+
+            //for each drive look and see if it removable
+            foreach (var drive in drives)
+            {
+                if (drive.DriveType == DriveType.Removable)
+                {
+                    //found a usb drive so show USB Boot option
+                    //Rbt_USB.Visibility = Visibility.Visible;
+                }
+            }
+
+           
+        }
+        
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -76,11 +97,29 @@ namespace RbtCmdr
 
             if(sdown.IsChecked ==true)
             {
-                Process.Start("shutdown", "/s /t 0");
+                Process sdown = new Process();
+                sdown.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                sdown.StartInfo.FileName = "Shutdown.exe";
+                sdown.StartInfo.Arguments = "/s /f /t 0";
+                sdown.StartInfo.UseShellExecute = true;
+                sdown.StartInfo.RedirectStandardOutput = false;
+                sdown.StartInfo.RedirectStandardError = false;
+                //RBT.StartInfo.Verb = "runas";
+                sdown.Start();
+                //Process.Start("shutdown", "/s /t 0");
             }
             if (Rbt.IsChecked ==true)
             {
-                Process.Start("shutdown", "/r /t 0");
+                Process RBT = new Process();
+                RBT.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                RBT.StartInfo.FileName = "Shutdown.exe";
+                RBT.StartInfo.Arguments = "/r /f /t 0";
+                RBT.StartInfo.UseShellExecute = true;
+                RBT.StartInfo.RedirectStandardOutput = false;
+                RBT.StartInfo.RedirectStandardError = false;
+                //RBT.StartInfo.Verb = "runas";
+                RBT.Start();
+                //Process.Start("shutdown", "/r /t 0");
             }
             if(Log_off.IsChecked ==true)
             {
@@ -112,6 +151,7 @@ namespace RbtCmdr
                 ADV.Start();
                 //Process.Start("shutdown", "/r /o /t 0");
             }
+
         }
 
         //Check if user is running as admin
