@@ -34,45 +34,16 @@ namespace RbtCmdr
         [DllImport("user32")]
         public static extern bool ExitWindowsEx(uint uFlags, uint dwReason);
 
-
         public MainWindow()
         {
 
-            //InitializeComponent();
-            //bool Admin = IsAdministrator();
-            //if (Admin == true)
-            //{
-
-            //}
-            //if (Admin ==false)
-            //{
-            //    Rbt_Adv.Visibility = Visibility.Hidden;
-            //    RBT_FW.Visibility = Visibility.Hidden;
-            //System.Windows.MessageBox.Show("Not ADMIN"); 
-            //}
-            
-
-            }
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var drives = DriveInfo.GetDrives();
 
-            //for each drive look and see if it removable
-            foreach (var drive in drives)
-            {
-                if (drive.DriveType == DriveType.Removable)
-                {
-                    //found a usb drive so show USB Boot option
-                    //Rbt_USB.Visibility = Visibility.Visible;
-                }
-            }
-
-           
         }
         
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
@@ -106,7 +77,6 @@ namespace RbtCmdr
                 sdown.StartInfo.RedirectStandardError = false;
                 //RBT.StartInfo.Verb = "runas";
                 sdown.Start();
-                //Process.Start("shutdown", "/s /t 0");
             }
             if (Rbt.IsChecked ==true)
             {
@@ -119,7 +89,6 @@ namespace RbtCmdr
                 RBT.StartInfo.RedirectStandardError = false;
                 //RBT.StartInfo.Verb = "runas";
                 RBT.Start();
-                //Process.Start("shutdown", "/r /t 0");
             }
             if(Log_off.IsChecked ==true)
             {
@@ -127,7 +96,6 @@ namespace RbtCmdr
             }
             if (RBT_FW.IsChecked ==true)
             {
-                //Process.Start("shutdown", "/r /fw /t 0");
                 Process FW = new Process();
                 FW.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 FW.StartInfo.FileName = "Shutdown.exe";
@@ -149,7 +117,6 @@ namespace RbtCmdr
                 ADV.StartInfo.RedirectStandardError = false;
                 ADV.StartInfo.Verb = "runas";
                 ADV.Start();
-                //Process.Start("shutdown", "/r /o /t 0");
             }
 
         }
