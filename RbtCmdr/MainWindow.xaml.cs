@@ -41,7 +41,7 @@ namespace RbtCmdr
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+           
         }
         
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -132,41 +132,49 @@ namespace RbtCmdr
         private void LockWS_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Lock Workstation";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void Log_off_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Logoff";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void sleep_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Sleep";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void Hib1_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Hibernate";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void sdown_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Shutdown";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void Rbt_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Restart";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void RBT_FW_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Boot Firmware";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void Rbt_Adv_Checked(object sender, RoutedEventArgs e)
         {
             RBT_BTN.Content = "Advanced Options";
+            RBT_BTN.IsEnabled = true;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

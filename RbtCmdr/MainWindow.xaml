@@ -12,13 +12,13 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <RadioButton x:Name="sdown" Content="Shutdown" HorizontalAlignment="Left" Margin="85,115.395,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,1.728" Height="15" Width="72.5" Checked="sdown_Checked"/>
-        <RadioButton x:Name="Rbt" Content="ReStart Windows" HorizontalAlignment="Left" Margin="85,135.395,0,0" VerticalAlignment="Top" Height="15" Width="108.5" Checked="Rbt_Checked"/>
+        <RadioButton x:Name="Rbt" Content="Restart Windows" HorizontalAlignment="Left" Margin="85,135.395,0,0" VerticalAlignment="Top" Height="15" Width="108.5" Checked="Rbt_Checked"/>
         <RadioButton x:Name="sleep" Content="Sleep" HorizontalAlignment="Left" Margin="85,74.534,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.268,-4.016" Height="15" Width="48" Checked="sleep_Checked"/>
         <RadioButton x:Name="Hib1" Content="Hibernate" HorizontalAlignment="Left" Margin="85,95.395,0,0" VerticalAlignment="Top" Height="15" Width="74" Checked="Hib1_Checked"/>
         <RadioButton x:Name="Log_off" Content="Logoff" HorizontalAlignment="Left" Margin="85,53.049,0,0" VerticalAlignment="Top" Height="16.485" Width="113.5" Checked="Log_off_Checked"/>
         <RadioButton x:Name="RBT_FW" Content="Boot to Bios/Firmware" HorizontalAlignment="Left" Margin="85,155.395,0,0" VerticalAlignment="Top" Height="15" Width="137" Checked="RBT_FW_Checked"/>
         <RadioButton x:Name="Rbt_Adv" Content="Boot to Advanced options" HorizontalAlignment="Left" Margin="85,175.395,0,0" VerticalAlignment="Top" Height="15" Width="155.5" Checked="Rbt_Adv_Checked"/>
-        <Button x:Name="RBT_BTN" Content="Reboot" HorizontalAlignment="Left" Margin="47.5,227,0,0" VerticalAlignment="Top" Width="110" Height="35" Click="Button_Click_1" RenderTransformOrigin="-0.21,0.536"/>
+        <Button x:Name="RBT_BTN" Content="Reboot" HorizontalAlignment="Left" Margin="47.5,227,0,0" VerticalAlignment="Top" Width="110" Height="35" Click="Button_Click_1" RenderTransformOrigin="-0.21,0.536" IsEnabled="False"/>
         <RadioButton x:Name="LockWS" Content="Lock Computer" HorizontalAlignment="Left" Margin="85,29.999,0,0" VerticalAlignment="Top" Checked="LockWS_Checked"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="217.319,227,0,0" VerticalAlignment="Top" Width="110" Height="35" Click="Button_Click_2"/>
         <RadioButton x:Name="Rbt_USB" Content="Boot to USB" HorizontalAlignment="Left" Margin="85,195.395,0,0" VerticalAlignment="Top" Height="15" Width="155.5" Checked="Rbt_Adv_Checked" Visibility="Hidden"/>
